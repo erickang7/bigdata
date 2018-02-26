@@ -1,13 +1,19 @@
 version: '2'
 services:
   sparkmaster:
-    image: ericskang/spark:latest
+    image: ericskang/spark:master
     container_name: sparkmaster
+    environment:
+      SPARK_NO_DAEMONIZE: "Y"
     ports:
       - "7077:7077"
       - "8080:8080"
+    command: ["start-master.sh"]
   sparkslave:
-    image: ericskang/spark:latest
+    image: ericskang/spark:slave
     container_name: sparkslave
+    environment:
+      SPARK_NO_DAEMONIZE: "Y"
     ports:
       - "8081:8081"
+    command: ["start-slave.sh", "spark://sparkmaster:7077"]
