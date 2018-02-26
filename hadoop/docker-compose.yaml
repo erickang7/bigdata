@@ -3,4 +3,8 @@ services:
   hdmaster:
     image: ericskang/hadoop:master
     container_name: hdmaster
-    command: ["tail", "-f", "/dev/null"]
+    ports:
+      - "8088:8088"
+  hddata0:
+    image: ericskang/hadoop:datanode
+    container_name: hddata0
