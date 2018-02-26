@@ -1,0 +1,6 @@
+version: '2'
+services:
+  hdmaster:
+    image: ericskang/hadoop:master
+    container_name: hdmaster
+    command: ["tail", "-f", "/dev/null"]
