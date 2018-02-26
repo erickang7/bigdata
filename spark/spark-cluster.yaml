@@ -1,0 +1,15 @@
+version: '2'
+services:
+  sparkmaster:
+    image: ericskang/spark:latest
+    container_name: sparkmaster
+    ports:
+      - "7077:7077"
+      - "8080:8080"
+    command: ["start-master.sh"]
+  sparkslave:
+    image: ericskang/spark:latest
+    container_name: sparkslave
+    ports:
+      - "8081:8081"
+    command: ["start-slave.sh", "spark://sparkmaster:7077"]

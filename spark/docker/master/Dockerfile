@@ -11,4 +11,4 @@ RUN cp $SPARK_HOME/conf/spark-defaults.conf.template $SPARK_HOME/conf/spark-defa
 EXPOSE 7077
 EXPOSE 8080
 
-CMD [tail -f /dev/null]
+CMD ["start-master.sh"]
