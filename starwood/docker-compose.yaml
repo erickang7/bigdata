@@ -1,0 +1,10 @@
+version: '2'
+services:
+  hdmaster:
+    image: ericskang/hadoop:master
+    container_name: hdmaster
+    ports:
+      - "8088:8088"
+  hddata0:
+    image: ericskang/hadoop:datanode
+    container_name: hddata0
