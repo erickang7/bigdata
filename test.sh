@@ -1,5 +1,7 @@
 #!/bin/bash 
 
+docker exec -ti starmaster bash
+
 hdfs dfs -ls
 
 spark-submit --class org.apache.spark.examples.SparkPi \

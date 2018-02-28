@@ -8,6 +8,8 @@ services:
       - "7077:7077"
       - "8080:8080"
       - "8088:8088"
+      - "8188:8188"
+      - "50070:50070"
     command: ["entrypoint.sh"]
   stardata0:
     image: ericskang/starwood:datanode
@@ -15,3 +17,9 @@ services:
     ports:
       - "8081:8081"
     command: ["entrypoint.sh"]
+  starui:
+    image: ericskang/starwood:nginx
+    container_name: starui
+    ports:
+      - "80:80"
+    command: ["nginx", "-g", "daemon off;"]
