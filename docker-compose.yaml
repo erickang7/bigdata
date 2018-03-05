@@ -17,6 +17,12 @@ services:
     ports:
       - "8081:8081"
     command: ["entrypoint.sh"]
+  stardata1:
+    image: ericskang/starwood:datanode
+    container_name: stardata1
+    ports:
+      - "8082:8081"
+    command: ["entrypoint.sh"]
   starui:
     image: ericskang/starwood:nginx
     container_name: starui
